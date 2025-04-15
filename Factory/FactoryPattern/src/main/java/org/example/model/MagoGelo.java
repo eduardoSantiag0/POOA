@@ -1,6 +1,6 @@
 package org.example.model;
 
-public class MagoGelo extends Mago{
+public class MagoGelo extends MagoProduct implements MagoGeloInterface{
 
     public MagoGelo(String nome) {
         super(nome);
@@ -16,4 +16,8 @@ public class MagoGelo extends Mago{
         return 10;
     }
 
+    @Override
+    public void congelarInimigo() {
+        System.out.println("Congelar!");
+    }
 }

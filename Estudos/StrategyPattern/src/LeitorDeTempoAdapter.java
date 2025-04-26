@@ -1,0 +1,3 @@
+interface LeitorDeTempoAdapter {
+    void lerTempo();
+}

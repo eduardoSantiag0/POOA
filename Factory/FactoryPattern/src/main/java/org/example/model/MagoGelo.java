@@ -1,6 +1,8 @@
 package org.example.model;
 
-public class MagoGelo extends MagoProduct implements MagoGeloInterface{
+import org.example.cliente.MagoGeloInterface;
+
+public class MagoGelo extends MagoProduct implements MagoGeloInterface {
 
     public MagoGelo(String nome) {
         super(nome);

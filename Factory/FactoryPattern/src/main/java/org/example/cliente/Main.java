@@ -1,11 +1,6 @@
-package org.example;
+package org.example.cliente;
 
-import org.example.model.MagoFogo;
-import org.example.model.MagoFogoInterface;
-import org.example.model.MagoGeloInterface;
-import org.example.model.MagoInterface;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.example.MagoFactory;
 
 public class Main {
     
@@ -17,6 +12,7 @@ public class Main {
         MagoGeloInterface gelinho = factory.criarMagoGelo("Gelinho");
         MagoFogoInterface foguinho = factory.criarMagoFogo("Foguinho");
 
+
         System.out.println(gelinho.atacar());
         System.out.println(foguinho.atacar());
         System.out.println(foguinho.getClass());
@@ -25,6 +21,10 @@ public class Main {
         gelinho.congelarInimigo();
 
         foguinho.paredeDeChamas();
+
+        MagoGeloInterface florestinho = factory.criarMagoFloresta("florestinho");
+        System.out.println(florestinho.getClass());
+        florestinho.congelarInimigo();
 
     }
 }

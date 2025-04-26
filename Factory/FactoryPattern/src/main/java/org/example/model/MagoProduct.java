@@ -1,10 +1,12 @@
 package org.example.model;
 
-public class MagoProduct extends Mago implements MagoInterface{
+import org.example.cliente.MagoInterface;
+
+public class MagoProduct extends Mago implements MagoInterface {
 
     private String nome;
 
-    public MagoProduct(String nome) {
+    protected MagoProduct(String nome) {
         this.nome = nome;
     }
 

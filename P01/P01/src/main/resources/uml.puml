@@ -1,0 +1,37 @@
+@startuml
+package "Gateway" {
+  [GatewayController]
+}
+
+package "Auction Service" {
+  [AuctionController]
+  [AuctionService]
+  [AuctionRepository]
+  [Auction]
+}
+
+package "Bid Service" {
+  [BidController]
+  [BidService]
+  [BidRepository]
+  [Bid]
+}
+
+package "Server" {
+  [ConfigServer]
+}
+
+[GatewayController] --> [AuctionController] : Rota /auctions
+[GatewayController] --> [BidController] : Rota /bids
+
+[AuctionController] --> [AuctionService]
+[AuctionService] --> [AuctionRepository]
+[AuctionRepository] --> [Auction]
+
+[BidController] --> [BidService]
+[BidService] --> [BidRepository]
+[BidRepository] --> [Bid]
+
+[ConfigServer] ..> [AuctionService] : Configurações
+[ConfigServer] ..> [BidService] : Configurações
+@enduml

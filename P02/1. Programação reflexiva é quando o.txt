@@ -1,0 +1,49 @@
+1. Programação reflexiva é quando o programa consegue acessar e modificar a própria estrutura e o comportamento em de forma dinâmica, em tempo de execução.
+
+2. Introspecção: obter informação do próprio código em tempo de execução
+Modificação dinâmica: Capacidade de alterar a estrutura e comportamento em tempo de execução
+
+3. Class, Field, Method e Constructor
+
+4. 
+
+Person person = new Person("John", 30);
+Class<?> personClass = person.getClass();
+
+System.out.println("Class Name: " + personClass.getName());
+
+Method[] methods = personClass.getDeclaredMethods();
+for (Method method : methods) {
+    System.out.println(" - " + method.getName());
+}
+
+Field[] fields = personClass.getDeclaredFields();
+for (Field field : fields) {
+    System.out.println(" - " + field.getName());
+}
+
+5. getDeclaredMethods() -> retorna um vetor de todos os metodos declarados pela classe
+getMethods() -> retorna os métodos públicos declarados pela classe e também os herdados
+
+6. Usar o método getMethodsAnnotatedWith()
+
+7. Carrega a classe que herdou do BaseFrameworkClass. Porque é uma classe abstrata, então todos os métodos estearrão declarados dentro da classe filha
+
+8. Não sei, chat
+
+9a. < É um método abstrato que obriga a subclasse (usuário do framework) a dizer qual método deseja invocar dinamicamente. Serve para fornecer ao framework o nome do método a ser invocado via reflexão. >
+
+9b. < O padrão Template Method define o esqueleto de um algoritmo em uma superclasse abstrata, deixando alguns passos a serem implementados pelas subclasses.
+
+Neste caso, o método execute() está fixo no framework, e ele chama getMethodName() — que é o gancho que a subclasse deve implementar. A subclasse fornece o nome do método que será chamado. >
+
+11. Indica que uma classe representa uma entidade que será mapeada para uma tabela do banco de dados. É usada pelo framework para identificar quais classes devem ser persistidas.
+
+12. Ele é necessário para criar as colunas da entidade no banco de dados
+
+13. Ele vai receber o Objeto, colocar os atributos em uma lista e fazer uma consulta inserindo o Objeto na tabela correta, adicionando os valores dos atributos nas respectivas colunas.
+
+14. Quando você sabe qual objeto vai receber e deseja trata-lo especificamente.
+
+15. Vantagens: Flexibilidade e reusabilidade do código em diferentes cenários
+Desvantagens: Possíveis erros de runtime se não implementado corretamente. É mais dificil de identificar os bugs. Não utiliza o static type checking em tempo de compilação.

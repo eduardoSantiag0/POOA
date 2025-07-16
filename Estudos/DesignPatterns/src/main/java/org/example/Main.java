@@ -3,6 +3,8 @@ package org.example;
 public class Main {
     public static void main(String[] args) {
 
+        GuardioesFactory guardioesFactory = new GuardioesFactory();
+
         //* Strategy
         RelogioDoTempo relogioDoTempo1 = new RelogioDoTempo(new TempoVelocidadeNormal(), 10);
 
@@ -17,12 +19,16 @@ public class Main {
         System.out.println(relogioDoTempo1.proximoSegundo());
         System.out.println(relogioDoTempo1.proximoSegundo());
 
+        //* Factory
+        GuardioesDoTempoObserver g1 = guardioesFactory.create("PRATA");
+        GuardioesDoTempoObserver g2 = guardioesFactory.create("OURO");
+
         //* Builder
         RelogioDoTempo relogioBuilder = new MultiversoBuilder()
                 .criarEstrategia(new TempoVelocidade2x())
                 .criartempoAtual(10)
-                .adicionarGuardioes(guardiaoDeOuro0)
-                .adicionarGuardioes(guardiaoDePrata1)
+                .adicionarGuardioes(g2)
+                .adicionarGuardioes(g1)
                 .adicionarGuardioes(guardiaoDePrata2)
                 .build();
 
@@ -52,7 +58,6 @@ public class Main {
         temporizador.medirEntropia();
 
         System.out.println(temporizador.getEstado().getClass());
-
 
     }
 }

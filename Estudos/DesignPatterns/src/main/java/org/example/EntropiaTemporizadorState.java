@@ -20,7 +20,6 @@ public class EntropiaTemporizadorState {
 
     public void setNivelEntropia(int novoNivel) {
         this.nivelDeEntropia = novoNivel;
-
     }
 
     public EntropiaState getEstado() {
